@@ -12,3 +12,8 @@ spring:
 logging:
   level:
     root: info
+
+app:
+  dir:
+    imgdir: file:///Users/a1234/Desktop/hanaspring/sb2/imgs
+    logdir: file:///Users/a1234/Desktop/hanaspring/sb2/logs

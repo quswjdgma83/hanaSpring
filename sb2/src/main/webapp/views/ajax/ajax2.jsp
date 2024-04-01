@@ -1,5 +1,5 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
@@ -8,7 +8,7 @@
             $('#id').keyup(function(){
                 var id = $(this).val();
                 ajax2.send(id);
-            })
+            });
         },
         send:function(id){
             $.ajax({
@@ -19,20 +19,21 @@
                 }
             });
         },
-        display: function(data) {
+        display:function(data){
             var result = 'Available.';
-            if(data.trim() === '0'){
-                result = "NotAvailable"
+            if(data.trim() == '0'){
+                result = 'Not Available.';
             }
             $('#id_span').text(result);
         }
+    };
 
-    }
     $(function(){
         ajax2.init();
-    })
+    });
 </script>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
 <div class="container">
     <h2>AJAX2 Page</h2>
     <form id="login_form">
@@ -43,8 +44,7 @@
         </div>
         <div class="form-group">
             <label for="pwd">Password:</label>
-            <input type="text" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
         </div>
 
         <button type="button" class="btn btn-primary">LOGIN</button>

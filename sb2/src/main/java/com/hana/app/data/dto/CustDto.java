@@ -8,7 +8,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustDto {
-    public String id;
+    private String id;
     private String pwd;
     private String name;
 }

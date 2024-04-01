@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: User
-  Date: 2024-03-26
-  Time: 오후 4:22
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- JSTL -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -18,7 +12,18 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <%-- KAKAO Map API   --%>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b91233131542ddc771208f56029a6d98"></script>
+
     <script src="<c:url value="/js/0327.js" />"></script>
+
+    <%--    highchart --%>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <style>
         .fakeimg {
@@ -33,7 +38,7 @@
     <h1>HTML5 & JavaScript</h1>
 </div>
 <c:choose>
-    <c:when test="${id == null}">
+    <c:when test="${sessionScope.id == null}">
         <ul class="nav justify-content-end">
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/login" />">LOGIN</a>
@@ -80,7 +85,9 @@
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/geo/"/>">Geo</a>
             </li>
-
+            <li class="nav-item">
+                <a class="nav-link" href="<c:url value="/chart/"/>">Chart</a>
+            </li>
             <c:if test="${id != null}">
                 <li class="nav-item">
                     <a class="nav-link" href="#">Cust</a>

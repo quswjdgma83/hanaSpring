@@ -9,9 +9,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
+
     $(function(){
         register.init('<c:url value="/registerimpl"/>');
     });
+
 </script>
 <div class="container">
     <h2>Register Page</h2>
