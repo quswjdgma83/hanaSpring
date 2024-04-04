@@ -25,7 +25,7 @@ public class Chart2Dto {
         list.add(this.m4);
         list.add(this.m5);
         list.add(this.m6);
-
         return list;
     }
+
 }

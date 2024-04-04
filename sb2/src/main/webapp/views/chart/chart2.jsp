@@ -1,17 +1,11 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: a1234
-  Date: 4/1/24
-  Time: 9:21 AM
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <style>
     #container{
-        width: 800px;
-        height: 600px;
-        border: 2px solid aqua;
+        width: 600px;
+        height: 500px;
+        border: 2px solid red;
     }
 </style>
 <script>
@@ -20,20 +14,17 @@
             $('#get').click(()=>{
                 this.get();
             });
-            setInterval(()=>{
-                this.get();
-                },3000);
+            setInterval(()=>{this.get();},3000);
         },
-        get: function (){
+        get:function(){
             $.ajax({
-                url:'<c:url value="/chart2"/>',
+                url:'<c:url value="/chart2" />',
                 success:(data)=>{
                     this.chart(data);
-                    console.log(data);
                 }
-            })
+            });
         },
-        chart:function (data){
+        chart:function(data){
             Highcharts.chart('container', {
                 chart: {
                     type: 'spline'
@@ -82,10 +73,8 @@
         chart2.init();
     });
 </script>
-<div class = "container">
+<div class="container">
     <h2>Chart2 Page</h2>
-    <div class = "container">
-        <button id="get" type="button" class="btn btn-primary">GET</button>
-        <div id="container"></div>
-    </div>
+    <button id="get" type="button" class="btn btn-primary">GET</button>
+    <div id="container"></div>
 </div>

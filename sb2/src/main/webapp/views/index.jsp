@@ -15,15 +15,15 @@
     <%-- KAKAO Map API   --%>
     <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b91233131542ddc771208f56029a6d98"></script>
 
-    <script src="<c:url value="/js/0327.js" />"></script>
-
-    <%--    highchart --%>
+    <%-- HighChart API   --%>
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <script src="https://code.highcharts.com/modules/series-label.js"></script>
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <%-- Custom API   --%>
+    <script src="<c:url value="/js/0327.js" />"></script>
 
     <style>
         .fakeimg {
@@ -54,7 +54,7 @@
     <c:otherwise>
         <ul class="nav justify-content-end">
             <li class="nav-item">
-                <a class="nav-link" href="#">${id}</a>
+                <a class="nav-link" href="<c:url value='/mypage/get'/>">${id}</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="<c:url value="/logout" />">LOGOUT</a>
@@ -90,7 +90,7 @@
             </li>
             <c:if test="${id != null}">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cust</a>
+                    <a class="nav-link" href="<c:url value="/cust/"/>">Cust</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Item</a>

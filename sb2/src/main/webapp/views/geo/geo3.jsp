@@ -29,6 +29,7 @@
 
         },
         getshop:function(){
+            //$.ajax();
             $.ajax({
                 url:'<c:url value="/geo/getdata"/>',
                 success:function(datas){
@@ -89,6 +90,7 @@
                         location.href='<c:url value="/geo/shopdetail?shopid='+target+'" />';
                     };
                 }
+
             });
         }
     };
