@@ -1,10 +1,7 @@
 package com.hana.app.service;
 
-import com.hana.app.data.dto.AddrDto;
-import com.hana.app.data.dto.CustDto;
 import com.hana.app.data.dto.ItemDto;
 import com.hana.app.frame.HanaService;
-import com.hana.app.repository.CustRepository;
 import com.hana.app.repository.ItemRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

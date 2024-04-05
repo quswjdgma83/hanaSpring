@@ -1,8 +1,7 @@
-package com.hana.frame;
+package com.hana.app.frame;
 
-import com.hana.exception.DuplicatedIDException;
-import com.hana.exception.DuplicatedIDException;
-import com.hana.exception.IdNotFoundException;
+import com.hana.app.exception.DuplicatedIDException;
+import com.hana.app.exception.IdNotFoundException;
 
 import java.util.List;
 

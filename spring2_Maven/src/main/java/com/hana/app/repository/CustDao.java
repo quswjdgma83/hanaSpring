@@ -4,10 +4,11 @@ import com.hana.app.data.CustDto;
 import com.hana.app.exception.DuplicatedIDException;
 import com.hana.app.exception.IdNotFoundException;
 import com.hana.app.frame.Dao;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Repository
 public class CustDao implements Dao<String, CustDto> {
     @Override
     public int insert(CustDto custDto) throws DuplicatedIDException {

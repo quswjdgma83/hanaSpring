@@ -1,12 +1,11 @@
-package com.hana.service;
+package com.hana.app.service;
 
-import com.hana.data.CustDto;
-import com.hana.exception.DuplicatedIDException;
-import com.hana.exception.IdNotFoundException;
-import com.hana.exception.NotFoundException;
-import com.hana.frame.Dao;
-import com.hana.frame.Service;
-import com.hana.repository.CustDao;
+import com.hana.app.data.CustDto;
+import com.hana.app.exception.DuplicatedIDException;
+import com.hana.app.exception.IdNotFoundException;
+import com.hana.app.frame.Dao;
+import com.hana.app.frame.Service;
+import com.hana.app.repository.CustDao;
 
 import java.util.List;
 
@@ -14,10 +13,9 @@ public class CustService implements Service<String, CustDto> {
 
     Dao<String, CustDto> dao;
 
-    public CustService(){
-        dao = new CustDao();
+    public CustService(Dao dao){
+        this.dao = dao;
     }
-
 
     @Override
     public int add(CustDto custDto) throws DuplicatedIDException {

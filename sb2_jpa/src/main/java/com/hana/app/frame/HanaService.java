@@ -1,7 +1,6 @@
 package com.hana.app.frame;
 
 
-import com.hana.app.data.dto.AddrDto;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;

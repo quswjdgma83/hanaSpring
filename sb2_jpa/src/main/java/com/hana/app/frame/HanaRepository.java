@@ -1,7 +1,5 @@
 package com.hana.app.frame;
 
-import com.hana.app.data.dto.AddrDto;
-
 import java.util.List;
 
 public interface HanaRepository<K,V> {

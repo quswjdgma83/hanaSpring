@@ -1,6 +1,9 @@
 package com.hana.app.data.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +28,7 @@ public class Chart2Dto {
         list.add(this.m4);
         list.add(this.m5);
         list.add(this.m6);
-
         return list;
     }
+
 }
