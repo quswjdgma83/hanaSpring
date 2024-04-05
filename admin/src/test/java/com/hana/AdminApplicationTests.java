@@ -10,6 +10,7 @@ class AdminApplicationTests {
 
     @Test
     void contextLoads() {
-        log.info("OK...................");
+        log.info("OK------------------------");
     }
+
 }

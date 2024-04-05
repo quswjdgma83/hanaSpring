@@ -37,7 +37,31 @@
 
     <!-- Custom scripts for all pages-->
     <script src="<c:url value="/js/sb-admin-2.min.js"/>"></script>
+    <!-- HighCharts  -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+    <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
+    <script>
+        let index = {
+            init:function(){
+                $('#login_form > button').click(()=>{
+                    // let id = $('#id').val();
+                    // let pwd = $('#id').val();
+                    $('#login_form').attr({
+                        'action':'<c:url value="/loginimpl"/>',
+                        'method':'POST'
+                    });
+                    $('#login_form').submit();
+                });
+            }
+        };
+        $(function(){
+            index.init();
+        });
+    </script>
 
 </head>
 
@@ -74,39 +98,40 @@
         <div class="sidebar-heading">
             Interface
         </div>
-
-        <!-- Nav Item - Pages Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
-               aria-expanded="true" aria-controls="collapseTwo">
-                <i class="fas fa-fw fa-cog"></i>
-                <span>Cust</span>
-            </a>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Customer Management:</h6>
-                    <a class="collapse-item" href="buttons.html">Add</a>
-                    <a class="collapse-item" href="<c:url value="/cust/get"/>">Get</a>
+        <c:if test="${sessionScope.admin.role.roleId == 1 || sessionScope.admin.role.roleId == 2}">
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                   aria-expanded="true" aria-controls="collapseTwo">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Cust</span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Customer Management:</h6>
+                        <a class="collapse-item" href="<c:url value="/cust/add"/>">Add</a>
+                        <a class="collapse-item" href="<c:url value="/cust/get"/>">Get</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
-               aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-wrench"></i>
-                <span>Item</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
-                 data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Item Management:</h6>
-                    <a class="collapse-item" href="utilities-color.html">Add</a>
-                    <a class="collapse-item" href="<c:url value="/item/get"/>">Get</a>
+            <!-- Nav Item - Utilities Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
+                   aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Item</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
+                     data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Item Management:</h6>
+                        <a class="collapse-item" href="<c:url value="/item/add"/>">Add</a>
+                        <a class="collapse-item" href="<c:url value="/item/get"/>">Get</a>
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
+        </c:if>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -295,38 +320,25 @@
                     <div class="topbar-divider d-none d-sm-block"></div>
 
                     <c:choose>
-                        <c:when test="${id == null}">
+                        <c:when test="${sessionScope.admin == null}">
                             <a href="#" data-toggle="modal" data-target="#loginModal">login</a>
                         </c:when>
                         <c:otherwise>
                             <li class="nav-item dropdown no-arrow">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
+                                <a class="nav-link dropdown-toggle" href="#" role="button"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.id}</span>
                                     <img class="img-profile rounded-circle"
-                                         src="img/undraw_profile.svg">
+                                         src="<c:url value="/img/undraw_profile.svg"/>"
                                 </a>
                                 <!-- Dropdown - User Information -->
-                                <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                     aria-labelledby="userDropdown">
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Profile
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Settings
-                                    </a>
-                                    <a class="dropdown-item" href="#">
-                                        <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Activity Log
-                                    </a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Logout
-                                    </a>
-                                </div>
+                            </li>
+                            <li class="nav-item dropdown no-arrow">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.role.roleName}</span>
+                            </li>
+                            <li class="nav-item dropdown no-arrow">
+                                <a href="<c:url value="/logout"/>" role="button"
+                                   aria-haspopup="true" aria-expanded="false">LOGOUT</a>
                             </li>
                         </c:otherwise>
                     </c:choose>
