@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import java.io.FileNotFoundException;
+import java.sql.SQLException;
 import java.util.List;
 
 @Service
@@ -18,7 +20,7 @@ public class ItemService implements HanaService<Integer, ItemDto> {
     @Value("${app.dir.imgsave}")
     String imgsave;
     @Override
-    public int add(ItemDto itemDto) throws Exception {
+    public int add(ItemDto itemDto) throws SQLException, FileNotFoundException, Exception {
         int result = 0;
         result = itemRepository.insert(itemDto);
         FileUploadUtil.saveFile(itemDto.getImage(),imgsave);
@@ -31,7 +33,7 @@ public class ItemService implements HanaService<Integer, ItemDto> {
     }
 
     @Override
-    public int modify(ItemDto itemDto) throws Exception {
+    public int modify(ItemDto itemDto)  throws SQLException,FileNotFoundException,Exception {
         return itemRepository.update(itemDto);
     }
 

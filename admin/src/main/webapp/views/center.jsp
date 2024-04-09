@@ -6,7 +6,7 @@
     let center = {
         init:function(){
             // const defaultData = 'http://127.0.0.1:81/logs/logback.log';
-            const defaultData = '${charturl}/logs/custinfo.log';
+            <%--const defaultData = '${charturl}/logs/custinfo.log';--%>
             const urlInput = document.getElementById('fetchURL');
             const pollingCheckbox = document.getElementById('enablePolling');
             const pollingInput = document.getElementById('pollingTime');

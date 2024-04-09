@@ -33,7 +33,6 @@ public class MypageController {
     public String dada(Model model, HttpSession session) {
         try {
             String id = (String) session.getAttribute("id");
-            System.out.println(id);
             List<AddrDto> addrs = addrService.findByCustId(id);
             model.addAttribute("addrs", addrs);
             model.addAttribute("left", dir + "left");

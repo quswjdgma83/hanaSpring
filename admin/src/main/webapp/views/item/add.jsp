@@ -44,20 +44,17 @@
         <div class="card-body">
             <div class="table-responsive">
                 <form id="item_add_form">
-
                     <div class="form-group">
                         <label for="name">Name:</label>
                         <input type="text"  class="form-control" id="name" placeholder="Enter password" name="ItemName">
-
                     </div>
                     <div class="form-group">
                         <label for="price">Price:</label>
                         <input type="number"  class="form-control" id="price" placeholder="Enter name" name="ItemPrice">
-
                     </div>
                     <div class="form-group">
                         <label for="image">Image:</label>
-                        <input type="file"  class="form-control" id="image" placeholder="Enter name" name="image">
+                        <input type="file"  class="form-control" id="image" placeholder="Enter Content" name="image">
 
                     </div>
 

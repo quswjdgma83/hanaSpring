@@ -25,7 +25,9 @@
             <label for="pwd">Password:</label>
             <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" value="pwd96">
         </div>
-
+        <div>
+            <p><${msg}/p>
+        </div>
         <button type="button" class="btn btn-primary">LOGIN</button>
     </form>
 </div>
