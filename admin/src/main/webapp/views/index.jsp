@@ -31,6 +31,9 @@
     <script src="<c:url value="/vendor/jquery/jquery.min.js"/>"></script>
     <script src="<c:url value="/vendor/bootstrap/js/bootstrap.bundle.min.js"/>"></script>
 
+    <%-- Web Socket Lib    --%>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
 
     <!-- Core plugin JavaScript-->
     <script src="<c:url value="/vendor/jquery-easing/jquery.easing.min.js"/>"></script>
@@ -90,6 +93,14 @@
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
+        <c:if test="${sessionScope.admin != null}">
+            <!-- Web Socket -->
+            <li class="nav-item active">
+                <a class="nav-link" href="<c:url value="/websocket" />">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Web Socket</span></a>
+            </li>
+        </c:if>
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -132,6 +143,7 @@
                 </div>
             </li>
         </c:if>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -329,7 +341,9 @@
                                    aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">${sessionScope.admin.id}</span>
                                     <img class="img-profile rounded-circle"
-                                         src="<c:url value="/img/undraw_profile.svg"/>"
+                                         src="<c:url value="/img/undraw_profile.svg"/>">
+
+
                                 </a>
                                 <!-- Dropdown - User Information -->
                             </li>
