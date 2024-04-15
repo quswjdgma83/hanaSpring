@@ -48,6 +48,22 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
     <script>
+        let sendAll = {
+            stompClient: null,
+            init: function () {
+                let socket = new SockJS('${serverurl}/wsss');
+                this.stompClient = Stomp.over(socket);
+                this.stompClient.connect();
+                $('#sendall').click(() => {
+                    console.log("ddd")
+                    let msg = JSON.stringify({
+                        'sendid' : "",
+                        'content1': $("#alltext").val()
+                    });
+                    this.stompClient.send("/alertall", {}, msg);
+                });
+            }
+        };
         let index = {
             init:function(){
                 $('#login_form > button').click(()=>{
@@ -63,6 +79,7 @@
         };
         $(function(){
             index.init();
+            sendAll.init();
         });
     </script>
 
@@ -97,6 +114,11 @@
             <!-- Web Socket -->
             <li class="nav-item active">
                 <a class="nav-link" href="<c:url value="/websocket" />">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Web Socket</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="<c:url value="/alert" />">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Web Socket</span></a>
             </li>
@@ -187,7 +209,7 @@
                         </div>
                     </div>
                 </form>
-
+                <input type="text" id="alltext"><button id="sendall">Send</button>
                 <!-- Topbar Navbar -->
                 <ul class="navbar-nav ml-auto">
 

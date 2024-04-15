@@ -36,4 +36,10 @@ public class MsgController {
 
         template.convertAndSend("/send/to/"+target,msg);
     }
+
+    @MessageMapping("/alertall") // 모두에게 전송
+    public void alertall(Msg msg, SimpMessageHeaderAccessor headerAccessor) {
+        log.info(msg.toString());
+        template.convertAndSend("/alert",msg);
+    }
 }
