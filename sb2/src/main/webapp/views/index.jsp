@@ -30,6 +30,60 @@
     <%-- Web Socket Lib    --%>
     <script src="<c:url value="/webjars/sockjs-client/sockjs.min.js"/>"></script>
     <script src="<c:url value="/webjars/stomp-websocket/stomp.min.js"/>"></script>
+    <style>
+        .fakeimg {
+            height: 200px;
+            background: #aaa;
+        }
+        #scroll-btn {
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            background-color: #ef476f;
+            position: fixed;
+            bottom: 13%;
+            right: 1%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            font: 2px monospace;
+            transition: opacity 2s, transform 2s;
+        }
+        #scroll-btn.show {
+            opacity: 1;
+            transition: opacity 5s, transform 5s;
+        }
+        #scroll-btn2 {
+            opacity: 0;
+            width: 50px;
+            height: 50px;
+            color: #fff;
+            background-color: #ef476f;
+            position: fixed;
+            bottom: 5%;
+            right: 1%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            font: bold 10px monospace;
+            transition: opacity 2s, transform 2s;
+        }
+        #scroll-btn:hover {
+            width: 60px;
+            height: 60px;
+            cursor: pointer; /* 마우스 커서가 포인터 형태로 변경되도록 함 */
+            transform: scale(1.2); /* 추가적인 시각적 효과를 위해 scale 변환을 사용할 수 있음 */
+        }
+        #scroll-btn2:hover {
+            width: 60px;
+            height: 60px;
+            cursor: pointer; /* 마우스 커서가 포인터 형태로 변경되도록 함 */
+            transform: scale(1.2); /* 추가적인 시각적 효과를 위해 scale 변환을 사용할 수 있음 */
+        }
+        #scroll-btn2.show {
+            opacity: 1;
+            transition: opacity 5s, transform 5s;
+        }
+    </style>
     <script>
         let center_websocket = {
             stompClient:null,
@@ -52,8 +106,29 @@
                 });
             }
         }
+        let chatbtn = {
+            init:function(){
+                // const scrollBtn = document.createElement("button");
+                // scrollBtn.innerHTML = "chatbot";
+                // scrollBtn.setAttribute("id", "scroll-btn");
+                // document.body.appendChild(scrollBtn);
+                // scrollBtn.classList.add("show");
+                // scrollBtn.addEventListener("click", function(){
+                //     location.href='/login';
+                // });
+                const scrollBtn2 = document.createElement("button");
+                scrollBtn2.innerHTML = "1:1";
+                scrollBtn2.setAttribute("id", "scroll-btn2");
+                document.body.appendChild(scrollBtn2);
+                scrollBtn2.classList.add("show");
+                scrollBtn2.addEventListener("click", function(){
+                    location.href='/chat2';
+                });
+            }
+        };
         $(function(){
             center_websocket.init();
+            chatbtn.init();
         });
     </script>
     <style>

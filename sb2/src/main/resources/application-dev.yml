@@ -37,10 +37,13 @@ logging:
     root: info
 app:
   url:
-    serverurl: http://172.16.21.242:81
+    serverurl: http://172.16.21.242:80
   dir:
     imgdir: file:/Users/a1234/Desktop/hanaspring/imgs/
     logdir: file:/Users/a1234/Desktop/hanaspring/logs/
+    imgsave: /Users/a1234/Desktop/hanaspring/imgs/
   key:
     wkey: Mpd6Rvm3BMLZFpbl%2FJdLLpW83sfGhRtP2CTabpRjSzuBHHqSUCDfJYt7BxoozPt7lrLZ9iTDITtVLDvh%2F1ei9Q%3D%3D
     whkey: 5ae7c11283db62206e0b6552195f7bce
+    ncp-id: fy27808voy
+    ncp-secret: t2zRuHRx0YXq1FJ1T1asB8uKOr3pqIIpFs2vP5tf
