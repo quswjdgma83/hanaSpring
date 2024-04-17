@@ -49,6 +49,8 @@ public class MainController {
     String ncpId;
     @Value("${app.key.ncp-secret}")
     String ncpSecret;
+    @Value("${app.url.chatboturl}")
+    String chatboturl;
 
     @RequestMapping("/")
     public String main(Model model) throws Exception {
@@ -221,6 +223,13 @@ public class MainController {
         model.addAttribute("result",map);
         model.addAttribute("imgname",imgname);
         model.addAttribute("center","ocr");
+        return "index";
+    }
+
+    @RequestMapping("/chatbot")
+    public String chatbot(Model model){
+        model.addAttribute("serverurl",chatboturl);
+        model.addAttribute("center","chatbot");
         return "index";
     }
 }

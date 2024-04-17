@@ -1,5 +1,5 @@
 server:
-  port: 81
+  port: 80
   servlet:
     encoding:
       charset: UTF-8
@@ -15,7 +15,7 @@ spring:
     redis:
       host: localhost
       port: 6379
-      password: aaaa
+      password: 111111
   mvc:
     view:
       prefix: /views/
@@ -37,13 +37,17 @@ logging:
     root: info
 app:
   url:
-    serverurl: http://172.16.21.242:80
+    serverurl: http://172.16.21.242:81
+    chatboturl: http://172.16.21.242
   dir:
     imgdir: file:/Users/a1234/Desktop/hanaspring/imgs/
     logdir: file:/Users/a1234/Desktop/hanaspring/logs/
     imgsave: /Users/a1234/Desktop/hanaspring/imgs/
   key:
     wkey: Mpd6Rvm3BMLZFpbl%2FJdLLpW83sfGhRtP2CTabpRjSzuBHHqSUCDfJYt7BxoozPt7lrLZ9iTDITtVLDvh%2F1ei9Q%3D%3D
-    whkey: 5ae7c11283db62206e0b6552195f7bce
-    ncp-id: fy27808voy
-    ncp-secret: t2zRuHRx0YXq1FJ1T1asB8uKOr3pqIIpFs2vP5tf
+    whkey: ENC(zYBADBV1ItDD6cQslUUt/B0jMzw5jRzg/+V74DuzP7+woyJadIV5D9NpcQsswfxU)
+    ncp-id: ENC(RMufuWBNrCoMnn9PkAD1hCZ8MwsNn5ik)
+    ncp-secret: ENC(fZPYRRMKF+cCJ4h9aow+GElVOF10aEdcnH+heGmlV6bKsp+dNUYqEFqarx/CbMK0PgjK1FCxJ/o=)
+    chatbot_url: ENC(deCRAS26fxIbTuICPsm+d5AnOQtbVBVvGnGncNGfKUyJrYMOo42Yq4W5Yt2D9eqZTG8dmAkODeyuI5ox6GShwzLlqnccxFCBk1RGSp/zlsgKGhXcdfgS43S2lyy00whFdo0W2EHqNfX2sO3YqRaWHss5GRGzjXUtPEqJv5rY+sU=)
+    chatbot_key: ENC(RvVfWYz9+zt5DvbzHlL/YkZYADW8AD6B04HvmfuzjNdxfDIluv6lh+j+NQm2HeElyvkwHdbIjnE=)
+    kakao_rest_key: ENC(1iBTtF2M/aGrE5hBPrxnq9KZLDpDix9pR7gj4d6EaNfs+os3xaOI8T8h5P1llBlP)

@@ -22,7 +22,7 @@
 
 <div class="container">
     <h2>Center Page</h2>
-    <h5>Title description, Sep 2, 2017</h5>
+    <h5>Today: </h5>
     <table class="table table-striped" id="board_table">
         <thead>
         <tr>
