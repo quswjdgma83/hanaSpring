@@ -9,11 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.Charset;
 
 @SpringBootTest
 @Slf4j
-class KakaoTests2 {
+class KaGPTTests {
 
     @Value("${app.key.kakao_rest_key}")
     String key;
@@ -31,7 +30,7 @@ class KakaoTests2 {
         //  String postParams = "content=" + text;
         con.setDoOutput(true);
         JSONObject jsonObject = new JSONObject();
-        jsonObject.put("prompt","오늘 아침 하늘은 곧 비가 올 것 같아서");
+        jsonObject.put("prompt","오늘 날씨 어때");
         jsonObject.put("max_tokens",120);
 
 

@@ -1,21 +1,18 @@
 package com.hana.kakao;
 
 import lombok.extern.slf4j.Slf4j;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 
 @SpringBootTest
 @Slf4j
-class KakaoTests1 {
+class KakaoMapTests {
     @Value("${app.key.kakao_rest_key}")
     String key;
 
